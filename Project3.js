@@ -1,7 +1,9 @@
 function rot13(str) { // LBH QVQ VG!
 
-  let test = str.split('');
-  console.log(test);
+  let str1 = str.slice();
+
+  let str1Arr = str1.split('');
+  console.log("str1Arr = " + str1Arr);
 
   let alphabet = {
     1: "A",
@@ -32,24 +34,33 @@ function rot13(str) { // LBH QVQ VG!
     26: "Z"
   }
 
-  let key = "";
-  if(key<=13){
-    key + 13;
+  let finalArray = [];
 
-  }else{
-    key-13;
-  }
 
-  for (var key in alphabet) { 
-    if (alphabet.hasOwnProperty(key)) { 
-        if (alphabet[key] === value){
-          if(key<=13){
-            
-          }
-        } 
-         
-    } 
-} 
+  for(let i=0; i<str1Arr.length; i++){
+    for (var key in alphabet) { 
+      if (alphabet.hasOwnProperty(key)) { 
+          if (alphabet[key] === str1Arr[i]){
+            if(parseInt(key)<=13){
+              console.log("if Key Before: " + key);
+              let a = parseInt(key)+=13;
+              console.log("if Key After: " + a);
+              finalArray.push(alphabet[a]);
+            } else{
+              console.log("else Key Before: " + key);
+              let a = parseInt(key)-=13;
+              finalArray.push(alphabet[a]);
+              console.log("else Key After: " + a);
+              
+            }
+          } 
+        }
+      }
+
+    }
+
+
+  console.log(finalArray)
 
     return str;
 }
