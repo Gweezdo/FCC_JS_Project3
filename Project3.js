@@ -32,6 +32,25 @@ function rot13(str) { // LBH QVQ VG!
     26: "Z"
   }
 
+  let key = "";
+  if(key<=13){
+    key + 13;
+
+  }else{
+    key-13;
+  }
+
+  for (var key in alphabet) { 
+    if (alphabet.hasOwnProperty(key)) { 
+        if (alphabet[key] === value){
+          if(key<=13){
+            
+          }
+        } 
+         
+    } 
+} 
+
     return str;
 }
   
