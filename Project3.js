@@ -3,7 +3,6 @@ function rot13(str) { // LBH QVQ VG!
   let str1 = str.slice();             // create a copy of the passed string
 
   let str1Arr = str1.split('');       // split string into character array;
-  console.log("str1Arr = " + str1Arr);
 
   let alphabet = {                    // object holding all characters of the alphabet
     1: "A",
@@ -65,36 +64,12 @@ function rot13(str) { // LBH QVQ VG!
     }
   }
 
-
-
-  // for(let i=0; i<str1Arr.length; i++){
-  //   for (var key in alphabet) { 
-  //     if (alphabet.hasOwnProperty(key)) { 
-  //         if (alphabet[key] === str1Arr[i]){
-  //           if(parseInt(key)<=13){
-  //             console.log("if Key Before: " + key);
-  //             let a = parseInt(key)+=13;
-  //             console.log("if Key After: " + a);
-  //             finalArray.push(alphabet[a]);
-  //           } else{
-  //             console.log("else Key Before: " + key);
-  //             let a = parseInt(key)-=13;
-  //             finalArray.push(alphabet[a]);
-  //             console.log("else Key After: " + a);
-              
-  //           }
-  //         } 
-  //       }
-  //     }
-
-  //   }
-
-
-  console.log(finalArray)
   let finalStr = finalArray.join("");
   console.log(finalStr);
   return finalStr;
 }
   
   // Change the inputs below to test
-  rot13("SERR! PBQR PNZC");
+  rot13("SERR PBQR PNZC");
+  rot13("FREE CODE CAMP");
+  
