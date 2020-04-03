@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="desktopStyleSheet.css">
+    <link rel="stylesheet" href="modalStyleSheet.css">
     <title>Document</title>
 </head>
 <body>
 
-    <p id="demo"></p>
+    <div class="modal" id="decrypModal">
+        <h3 class="modalHead">Decrypted message</h3>
+        
+        <div class="modalBody">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dicta maxime sint corrupti quam corporis ea voluptatem, similique quibusdam impedit. Quos iusto, debitis minus ipsum repellat omnis architecto obcaecati totam?</div>
+        <div class="flexContainer">
+            <div id="timer"></div>
+            <p>until message self destruct</p>
+        </div>    
+
+        <button class="btn" id="closeBtn"></button>
+    </div>
+
+  
     
 <script src="countdownTimer.js"></script>
 </body>

@@ -4,7 +4,7 @@ seconds = parseInt(str.length/200 * 60);
 // Update the count down every 1 second
 var myTimer = setInterval(function() {
     seconds--
-    document.getElementById("demo").innerHTML = seconds + 's';
+    document.getElementById("timer").innerHTML = seconds + " seconds";
     
     if(seconds <= 0){
         clearInterval(myTimer)

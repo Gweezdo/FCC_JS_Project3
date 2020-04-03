@@ -1,0 +1,69 @@
+body{
+    background-color: rgba(13, 11, 12, 0.2);
+}
+.modal{
+    position: relative;
+    display: block;
+    width: 400px;
+    height: 302px;
+    background: white;
+    border-radius: 4px;
+    border: none;
+    left:calc(50% - 200px);
+    /* padding: 24px 24px */
+}
+
+.modalHead{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: Heavy;
+    font-size: 20px;
+    position: relative;
+    padding: 24px 1px 24px 24px;
+    margin: 0;
+    background-color: red;
+}
+
+.modalBody{
+    padding: 16px 16px;
+    margin: 0 24px;
+    background-color: #D9D7D8;
+}
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: brown;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+}
+
+.flexContainer #timer{
+    color: red;
+    background-color: aqua;
+    
+    padding: 10px 0 10px 10px;
+    margin: 0 0 0 10px;
+    align-self: center;
+}
+
+.flexContainer p{
+    background-color: rgb(0, 255, 0);
+    padding: 10px 10px 10px 3px;
+    /* margin-left: 5px */
+    align-self: center;
+}
+
+
+
+
+
+
+
+
+
+/* p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+} */
