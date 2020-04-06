@@ -9,15 +9,21 @@
 <body>
 
     <div class="modal" id="decrypModal">
-        <h3 class="modalHead">Decrypted message</h3>
-        
+        <div class="flexContainer1">
+            <h3 class="modalHead">Decrypted message</h3>
+            <div id="closeBtnTop">
+                <svg id="close-X" class="icon visibility">
+                    <use xlink:href="/icons/close-X.svg#image1"></use>
+                </svg>
+            </div>
+        </div>
         <div class="modalBody">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dicta maxime sint corrupti quam corporis ea voluptatem, similique quibusdam impedit. Quos iusto, debitis minus ipsum repellat omnis architecto obcaecati totam?</div>
-        <div class="flexContainer">
+        <div class="flexContainer2">
             <div id="timer"></div>
             <p>until message self destruct</p>
         </div>    
 
-        <button class="btn" id="closeBtn"></button>
+        <button class="btn" id="closeBtnBottom">CLOSE</button>
     </div>
 
   
