@@ -6,6 +6,10 @@
     display: none;
 }
 
+#encryptingModal{
+    display: block;
+}
+
 /* Typical styling for all modals */
 body{
     background-color: rgba(13, 11, 12, 0.2);
@@ -136,5 +140,22 @@ body{
 }
 
 /* Encrypting... modal specific style */
+.loadbarBorder{
+    position: relative;
+    /* margin: 0 24px; */
+    padding: 0 24px 0 24px;
+    border: solid black 3px;
+    width: 350px;
+    height: 24px;
+    background-color: aqua;
+}
 
+.loadBarFill{
+    background-color: blue;
+    height: 24px;
+    width: 300px;
+    /* margin: 0 24px 0 24px; */
+    padding: 0 24px 0 24px;
+    
+}
 
