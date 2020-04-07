@@ -1,6 +1,16 @@
+#decrypModal{
+    display: none;
+}
+
+#encrypModal{
+    display: none;
+}
+
+/* Typical styling for all modals */
 body{
     background-color: rgba(13, 11, 12, 0.2);
 }
+
 .modal{
     position: relative;
     display: block;
@@ -90,6 +100,7 @@ body{
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
+    background-color: #BDBDBD;
 }
 
 .btn:focus{
@@ -97,17 +108,33 @@ body{
 }
 
 
+/* Decrypted modal specific style */
+#closeBtnBottom1{
+    position: relative;
+    margin: 24px 32px 24px 0;
+    left: 271px;
+    /* background-color: green; */
+}
 
 
 
+/* Encrypted modal specific style */
+#copyBtn{
+    position: absolute;
+    margin: 24px 32px 24px 0;
+    left: 280px;
+    background-color: #02539A;
+    color: white;
+
+}
+
+#closeBtnBottom2{
+    position: relative;
+    margin: 24px 32px 24px 0;
+    left: 167px;
+    /* background-color: green; */
+}
+
+/* Encrypting... modal specific style */
 
 
-
-
-
-
-/* p {
-  text-align: center;
-  font-size: 60px;
-  margin-top: 0px;
-} */
