@@ -35,7 +35,7 @@ body{
     padding: 0;
     width: 400px;
     height: 71px; 
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 .modalHead{
@@ -45,7 +45,7 @@ body{
     position: relative;
     padding: 24px 1px 21px 24px;
     margin: 0;
-    background-color: red;
+    /* background-color: red; */
     width: 365px;
     line-height: 27px;
 }
@@ -55,7 +55,7 @@ body{
     /* display: block; */
     padding-top: 21.41px;
     /* margin-left: 20px; */
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 35px;
 }
 
@@ -140,22 +140,23 @@ body{
 }
 
 /* Encrypting... modal specific style */
-.loadbarBorder{
+#loadBarBorder{
     position: relative;
-    /* margin: 0 24px; */
-    padding: 0 24px 0 24px;
-    border: solid black 3px;
-    width: 350px;
+    margin: 0 24px 0 24px;
+    /* border: solid  */
+    border-radius: 4px;
+    width: auto;
     height: 24px;
-    background-color: aqua;
+    background-color: rgba(217,215,216, 0.5);
 }
 
-.loadBarFill{
-    background-color: blue;
+#loadBarFill{
+    background-color:#05C7F2;
     height: 24px;
-    width: 300px;
+    width: 1%;
+    border-radius: 4px;
     /* margin: 0 24px 0 24px; */
-    padding: 0 24px 0 24px;
+    /* padding: 0 24px 0 24px; */
     
 }
 
