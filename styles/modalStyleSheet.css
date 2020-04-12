@@ -12,11 +12,11 @@
 
 /* Typical styling for all modals */
 body{
-    /* background-color: rgba(13, 11, 12, 0.2); */
+    background-color: rgba(13, 11, 12, 0.2);
 }
 
 .modal{
-    position: relative;
+    position: absolute;
     display: block;
     width: 400px;
     height: auto;
@@ -24,6 +24,7 @@ body{
     border-radius: 4px;
     border: none;
     left:calc(50% - 200px);
+    top: 15rem;
     /* padding: 24px 24px */
 }
 
@@ -161,12 +162,15 @@ body{
 }
 
 #encryptingModal > p{
-    padding: 0 24px;
-    background-color: red;
+    /* padding: 0.8rem 24px; */
+    margin: 0.8rem auto 2.2rem 2.4rem;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    /* background-color: red; */
 }
 
 #cancelBtn{
     position: relative;
-    margin: 0px 32px 22px 0;
+    margin: 0rem 32px 22px 0;
     left: 255px;
 }
