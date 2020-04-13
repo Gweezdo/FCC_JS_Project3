@@ -17,7 +17,7 @@ body{
 
 .modal{
     position: absolute;
-    display: block;
+    /* display: block; */
     width: 400px;
     height: auto;
     background: white;
@@ -51,7 +51,7 @@ body{
     line-height: 27px;
 }
 
-#closeBtnTop{
+#closeBtnTop1, #closeBtnTop2, #closeBtnTop3{
     position: relative;
     /* display: block; */
     padding-top: 21.41px;
