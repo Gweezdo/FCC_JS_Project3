@@ -3,7 +3,7 @@
 }
 
 #encrypModal{
-    display: none;
+    /* display: none; */
 }
 
 #encryptingModal{
@@ -68,6 +68,7 @@ body{
     padding: 16px 16px;
     margin: 0 24px;
     background-color: #D9D7D8;
+    height: 300px;
 }
 
 .flexContainerModal2{

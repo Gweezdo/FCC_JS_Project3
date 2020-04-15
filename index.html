@@ -19,7 +19,7 @@
                 <h2 >Your message</h2>
                 <p>Enter a message that you would like to encript</p>
                 <textarea name="yourMsg" id="yourMsgTextarea" cols="num" rows="num" onclick=selectEncrip()></textarea>
-                <button class="mainBtn" id="mainBtnEncryp" onclick=encrypt()>ENCRYPT</button>
+                <button class="mainBtn" id="mainBtnEncryp" onclick="testText()" >ENCRYPT</button>  <!--Remember to add onclick=encrypt() back to this line-->
             </div>
             <div>
                 <p id="or">OR</p>
@@ -61,7 +61,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="modalBody">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dicta maxime sint corrupti quam corporis ea voluptatem, similique quibusdam impedit. Quos iusto, debitis minus ipsum repellat omnis architecto obcaecati totam?</div>   
+            <div class="modalBody" id="encryptedModalBody"></div>   
 
             <button class="btn" id="closeBtnBottom2">CLOSE</button>
             <button class="btn" id="copyBtn">COPY</button>
@@ -92,8 +92,7 @@
     
 
 
-<script src="scripts/functionality.js"></script>
-<!-- <script src="scripts/main.js"></script> -->
+<script src="scripts/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>
