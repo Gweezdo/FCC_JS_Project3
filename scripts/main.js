@@ -69,16 +69,15 @@ function rot13(str) { // LBH QVQ VG!
   return finalStr;
 }
   
-function testText() {
-  var inputText = document.getElementById("yourMsgTextarea").value;
+function outputText(myTextarea, myModalBody) {
+  var inputText = document.getElementById(myTextarea).value;
   console.log(inputText);
   var outputText = rot13(String(inputText));
   console.log(outputText);
-  document.getElementById("encryptedModalBody").innerHTML = outputText;
+  document.getElementById(myModalBody).innerHTML = outputText;
 
   // console.log(outputText);
 }
-
 
 
 
@@ -109,27 +108,99 @@ function selectDecrip() {
   }
 }
 
+// **************************
+// Close Modal Function 
+// **************************
+
+
+var closeBtnList = document.getElementsByClassName("closeBtn");
+var modal = document.getElementsByClassName("modal");
+// modal[0] = decrypting
+// modal[1] = encrypted
+// modal[2] = encrypting
+
+
+Array.from(closeBtnList).forEach((x) => {
+  x.addEventListener("click", closeModal);
+});
+window.addEventListener('click', clickOutside);
+// var decrypModal = document.getElementById("decrypModal");
+// var encrypModal = document.getElementById("encrypModal");
+// var encryptingModal = document.getElementById("encryptingModal");
+
+function closeModal() {
+  modal[0].style.display = "none";
+  modal[1].style.display = "none";
+  modal[2].style.display = "none";
+  
+}
+
+function clickOutside(e){
+  if (e.target == modal[0] || e.target == modal[1] || e.target == modal[2]) {
+    modal[0].style.display = "none";
+    modal[1].style.display = "none";
+    modal[2].style.display = "none";
+    
+  }
+  
+}
+
+// Executes once 'Encrypt' button is clicked
+function encrypt() {
+
+  modal[0].style.display = "none";
+  modal[1].style.display = "none";
+  modal[2].style.display = "block";
+
+  move();
+
+  
+  setTimeout(() => {
+    modal[1].style.display = "block";
+    modal[2].style.display = "none"; 
+  }, 3400);
+  
+  outputText("yourMsgTextarea", "encryptedModalBody");
+}
+
+// Executes once 'Decrypt' button is clicked
+function decrypt() {
+
+  modal[0].style.display = "block";
+  modal[1].style.display = "none";
+  modal[2].style.display = "none";
+
+  // move();
+
+  
+  // setTimeout(() => {
+  //   modal[1].style.display = "block";
+  //   modal[2].style.display = "none"; 
+  // }, 3400);
+  
+  outputText("decrypMsgTextarea", "decryptedModalBody");
+}
 
 
 // **************************
 // Loadbar function 
 // **************************
 
-var i = 0;
+var quit = true;
 function move() {
-  // console.log("hallow hallow")
-  if (i == 0) {
-    i = 1;
+  if (quit == true) {
+    quit = false;
     var elem = document.getElementById("loadBarFill");
     var width = 1;
     var id = setInterval(frame, 20);
-    return true;
   }
+
+  
 
   function frame() {
     if (width >= 100) {
       clearInterval(id);
-      i = 0;
+      quit = true;
     } else if (width <= 30) {
       width += 3;
       elem.style.width = width + "%";
@@ -149,18 +220,36 @@ function move() {
       width += 1;
       elem.style.width = width + "%";
     }
+    
   }
 }
 
+// **************************
+// Copy Text to Clipboard
+// **************************
+var copyBtn = document.getElementById("copyBtn");
+copyBtn.addEventListener('click', copyText);
+
+function copyText(){
+  var myText = document.getElementById("encryptedModalBody").innerHTML;
+  console.log("copyText = " + myText);
+  var copyText = document.createElement("input");
+  document.body.appendChild(copyText);
+  copyText.value = myText;
+  copyText.select();
+  document.execCommand("copy",false);
+  copyText.remove();
+  alert("Copied the text: " + copyText.value);
+}
 
 
 // **************************
 // Countdown Timer 
 // **************************
 
-var str =
-  "lksdfj lksjdf lkjsdf sdlfkj asdf ads a saads asdfsaf asd ads dsf sdf asdf a asdf asdf asdf sadf asd asd asd sad asd asd fsd fsdfsdfsdfsdf asdf sdf sdfasdfsdfsaf sfd af asdf asdf dsfsdfasdf  a  asdf asdf asdf asd asd asd a sdf asdf asdf sdf sdfasdf asdf asdf asdf asdf asdf asdf asdf asdf ";
-seconds = parseInt((str.length / 200) * 60);
+var str = "\"" + document.getElementById("decrypMsgTextarea").value + "\"";
+console.log(str.length);
+seconds = parseInt((str.length) * 1.50);
 // Update the count down every 1 second
 var myTimer = setInterval(function () {
   seconds--;
@@ -170,56 +259,3 @@ var myTimer = setInterval(function () {
     clearInterval(myTimer);
   }
 }, 1000);
-
-
-// **************************
-// Close Modal Function 
-// **************************
-
-
-// // var decrypModal = document.getElementById("decrypModal");
-// var encrypModal = document.getElementById("encrypModal");
-// var encryptingModal = document.getElementById("encryptingModal");
-
-// var closeBtnTop1 = document.getElementById("closeBtnTop1");
-// var closeBtnTop2 = document.getElementById("closeBtnTop2");
-// var closeBtnTop3 = document.getElementById("closeBtnTop3");
-// var closeBtnBottom1 = document.getElementById("closeBtnBottom1");
-// var closeBtnBottom2 = document.getElementById("closeBtnBottom2");
-// var cancelBtn = document.getElementById("cancelBtn");
-// var temp = waitForIt;
-//   closeBtnTop1.addEventListener('click', closeModal);
-//   closeBtnTop2.addEventListener("click", closeModal);
-//   closeBtnTop3.addEventListener("click", closeModal);
-//   closeBtnBottom1.addEventListener("click", closeModal);
-//   closeBtnBottom2.addEventListener("click", closeModal);
-//   cancelBtn.addEventListener("click", closeModal);
-// function waitForIt() {
-//   encryptingModal.style.display = "none";
-//   encrypModal.style.display = "block";
-// }
-//   function closeModal() {
-//     decrypModal.style.display = 'none';
-//     encrypModal.style.display = 'none';
-//     encryptingModal.style.display = "none";
-//     temp = nothing;
-
-    
-//     function nothing() {}
-    
-//   }
-
-// // Executes once 'Encrypt' button is clicked
-// function encrypt() {
-//   encrypModal.style.display = "block";
-//   encryptingModal.style.display = "none";
-//   $("header", ".flexContainerMain1").css("background", "rgba(13, 11, 12, 0.2)");
-//   $("header", ".flexContainerMain1").css("opacity", "0.5");
-//   encryptingModal.style.display = "block";
-//   $("textarea").css("background", "rgba(13, 11, 12, 0.2)");
-
-//   move();
-  
-//   setTimeout(temp, 3400);
-  
-// }

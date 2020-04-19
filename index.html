@@ -16,10 +16,10 @@
 
         <div class="flexContainerMain1">
             <div class="flexItemTyp" id="yourMsg">
-                <h2 >Your message</h2>
+                <h2>Your message</h2>
                 <p>Enter a message that you would like to encript</p>
                 <textarea name="yourMsg" id="yourMsgTextarea" cols="num" rows="num" onclick=selectEncrip()></textarea>
-                <button class="mainBtn" id="mainBtnEncryp" onclick="testText()" >ENCRYPT</button>  <!--Remember to add onclick=encrypt() back to this line-->
+                <button class="mainBtn" id="mainBtnEncryp" onclick="encrypt()">ENCRYPT</button>  <!--Remember to add onclick=encrypt() back to this line-->
             </div>
             <div>
                 <p id="or">OR</p>
@@ -28,63 +28,66 @@
                 <h2>Decrypt a message</h2>
                 <p>Paste in a message that you would like to decrypt</p>
                 <textarea name="decrypMsg" id="decrypMsgTextarea" cols="num" rows="num" onclick=selectDecrip()></textarea>
-                <button class="mainBtn" id="mainBtnDecryp">DECRYPT</button>
+                <button class="mainBtn" id="mainBtnDecryp" onclick="decrypt()">DECRYPT</button>
             </div>
         </div>
 
         <!-- Decrtpted Modal Markup -->
-        <div class="modal" id="decrypModal">
-            <div class="flexContainerModal1">
-                <h3 class="modalHead">Decrypted message</h3>
-                <div id="closeBtnTop1">
-                    <svg id="close-X" class="icon visibility">
-                        <use xlink:href="/icons/close-X.svg#image1" ></use>
-                    </svg>
+        <div class="modal">
+            <div class="modalContent" id="decrypModal">
+                <div class="flexContainerModal1">
+                    <h3 class="modalHead">Decrypted message</h3>
+                    <div id="closeBtnTop1" class="closeBtn">
+                        <svg id="close-X" class="icon visibility">
+                            <use xlink:href="/icons/close-X.svg#image1" ></use>
+                        </svg>
+                    </div>
                 </div>
+                <div class="modalBody" id="decryptedModalBody"></div>
+                <div class="flexContainerModal2">
+                    <div id="timer"></div>
+                    <p>until message self destruct</p>
+                </div>    
+
+                <button class="btn closeBtn" id="closeBtnBottom1">CLOSE</button>
             </div>
-            <div class="modalBody">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dicta maxime sint corrupti quam corporis ea voluptatem, similique quibusdam impedit. Quos iusto, debitis minus ipsum repellat omnis architecto obcaecati totam?</div>
-            <div class="flexContainerModal2">
-                <div id="timer"></div>
-                <p>until message self destruct</p>
-            </div>    
-
-            <button class="btn" id="closeBtnBottom1">CLOSE</button>
-        </div>
-
+        </div>    
         <!-- Encrtpted Modal Markup -->
-        <div class="modal" id="encrypModal">
-            <div class="flexContainerModal1">
-                <h3 class="modalHead">Encrypted message</h3>
-                <div id="closeBtnTop2">
-                    <svg id="close-X" class="icon visibility">
-                        <use xlink:href="/icons/close-X.svg#image1" ></use>
-                    </svg>
+        <div class="modal">
+            <div class="modalContent" id="encrypModal">
+                <div class="flexContainerModal1">
+                    <h3 class="modalHead">Encrypted message</h3>
+                    <div id="closeBtnTop2" class="closeBtn">
+                        <svg id="close-X" class="icon visibility">
+                            <use xlink:href="/icons/close-X.svg#image1" ></use>
+                        </svg>
+                    </div>
                 </div>
+                <div class="modalBody" id="encryptedModalBody" type="textarea"></div>   
+
+                <button class="btn closeBtn" id="closeBtnBottom2">CLOSE</button>
+                <button class="btn" id="copyBtn">COPY</button>
             </div>
-            <div class="modalBody" id="encryptedModalBody"></div>   
-
-            <button class="btn" id="closeBtnBottom2">CLOSE</button>
-            <button class="btn" id="copyBtn">COPY</button>
-        </div>
-
+        </div>    
         <!-- Encrtpting.... Modal Markup -->
-        <div class="modal" id="encryptingModal">
-            <div class="flexContainerModal1">
-                <h3 class="modalHead">Encrypting...</h3>
-                <div id="closeBtnTop3" >
-                    <svg  id="close-X" class="icon visibility">
-                        <use xlink:href="/icons/close-X.svg#image1"></use>
-                    </svg>
+        <div class="modal">
+            <div class="modalContent" id="encryptingModal">
+                <div class="flexContainerModal1">
+                    <h3 class="modalHead">Encrypting...</h3>
+                    <div id="closeBtnTop3" class="closeBtn">
+                        <svg  id="close-X" class="icon visibility">
+                            <use xlink:href="/icons/close-X.svg#image1"></use>
+                        </svg>
+                    </div>
                 </div>
+                <div id="loadBarBorder">
+                    <div id="loadBarFill"></div>
+                </div> 
+                <p>This will only take a few seconds</p>  
+                <!-- <button  onclick="move()">click me</button> -->
+                <button class="btn closeBtn" id="cancelBtn">CANCEL</button>
             </div>
-            <div id="loadBarBorder">
-                <div id="loadBarFill"></div>
-            </div> 
-            <p>This will only take a few seconds</p>  
-            <!-- <button  onclick="move()">click me</button> -->
-            <button class="btn" id="cancelBtn">CANCEL</button>
-            
-        </div>
+        </div>    
     </div>
     <footer>
         <p>Developed my Zjak Theron & designed by Daleen Rabe</p>
