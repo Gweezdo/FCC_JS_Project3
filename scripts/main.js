@@ -161,11 +161,11 @@ function encrypt() {
   }, 3400);
   
   outputText("yourMsgTextarea", "encryptedModalBody");
+  document.getElementById("yourMsgTextarea").value = "";
 }
 
 // Executes once 'Decrypt' button is clicked
 function decrypt() {
-
   modal[0].style.display = "block";
   modal[1].style.display = "none";
   modal[2].style.display = "none";
@@ -178,7 +178,9 @@ function decrypt() {
   //   modal[2].style.display = "none"; 
   // }, 3400);
   
-  outputText("decrypMsgTextarea", "decryptedModalBody");
+  outputText("decrypMsgTextarea","decryptedModalBody");
+  document.getElementById("decrypMsgTextarea").value = "";
+  
 }
 
 
@@ -239,7 +241,9 @@ function copyText(){
   copyText.select();
   document.execCommand("copy",false);
   copyText.remove();
-  alert("Copied the text: " + copyText.value);
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Text Copied";
 }
 
 
@@ -247,15 +251,23 @@ function copyText(){
 // Countdown Timer 
 // **************************
 
-var str = "\"" + document.getElementById("decrypMsgTextarea").value + "\"";
-console.log(str.length);
-seconds = parseInt((str.length) * 1.50);
-// Update the count down every 1 second
-var myTimer = setInterval(function () {
-  seconds--;
-  document.getElementById("timer").innerHTML = seconds + " seconds";
 
-  if (seconds <= 0) {
-    clearInterval(myTimer);
-  }
-}, 1000);
+// console.log(str.length);
+function countdownTimer(){
+  var seconds = 5;
+  // Update the count down every 1 second
+  var myTimer = setInterval(function () {
+    seconds--;
+    document.getElementById("timer").innerHTML = seconds + " seconds";
+
+    if (seconds == 0) {
+      seconds = 5;
+      clearInterval(myTimer);
+      // document.getElementById("decryptedModalBody").innerHTML = "Message Deleted";
+      modal[0].style.display = "none";
+    }
+  }, 1000);
+}
+
+var decrypBtn = document.getElementById("mainBtnDecryp");
+decrypBtn.addEventListener("click", countdownTimer);
