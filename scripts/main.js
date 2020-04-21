@@ -115,9 +115,10 @@ function selectDecrip() {
 
 var closeBtnList = document.getElementsByClassName("closeBtn");
 var modal = document.getElementsByClassName("modal");
-// modal[0] = decrypting
+// modal[0] = decrypted
 // modal[1] = encrypted
 // modal[2] = encrypting
+// modal[3] = decrypting
 
 
 Array.from(closeBtnList).forEach((x) => {
@@ -132,15 +133,21 @@ function closeModal() {
   modal[0].style.display = "none";
   modal[1].style.display = "none";
   modal[2].style.display = "none";
+  modal[3].style.display = "none";
   
 }
 
 function clickOutside(e){
-  if (e.target == modal[0] || e.target == modal[1] || e.target == modal[2]) {
+  if (
+    e.target == modal[0] ||
+    e.target == modal[1] ||
+    e.target == modal[2] ||
+    e.target == modal[3]
+  ) {
     modal[0].style.display = "none";
     modal[1].style.display = "none";
     modal[2].style.display = "none";
-    
+    modal[3].style.display = "none";
   }
   
 }
@@ -151,6 +158,7 @@ function encrypt() {
   modal[0].style.display = "none";
   modal[1].style.display = "none";
   modal[2].style.display = "block";
+  modal[3].style.display = "none";
 
   move();
 
@@ -166,17 +174,18 @@ function encrypt() {
 
 // Executes once 'Decrypt' button is clicked
 function decrypt() {
-  modal[0].style.display = "block";
+  modal[0].style.display = "none";
   modal[1].style.display = "none";
   modal[2].style.display = "none";
+  modal[3].style.display = "block";
 
-  // move();
+  move1();
 
   
-  // setTimeout(() => {
-  //   modal[1].style.display = "block";
-  //   modal[2].style.display = "none"; 
-  // }, 3400);
+  setTimeout(() => {
+    modal[0].style.display = "block";
+    modal[3].style.display = "none"; 
+  }, 3400);
   
   outputText("decrypMsgTextarea","decryptedModalBody");
   document.getElementById("decrypMsgTextarea").value = "";
@@ -185,7 +194,7 @@ function decrypt() {
 
 
 // **************************
-// Loadbar function 
+// Loadbar function encrypt
 // **************************
 
 var quit = true;
@@ -227,6 +236,48 @@ function move() {
 }
 
 // **************************
+// Loadbar function decrypt
+// **************************
+
+var quit = true;
+function move1() {
+  if (quit == true) {
+    quit = false;
+    var elem1 = document.getElementById("loadBarFill1");
+    var width = 1;
+    var id1 = setInterval(frame, 20);
+  }
+
+  
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id1);
+      quit = true;
+    } else if (width <= 30) {
+      width += 3;
+      elem1.style.width = width + "%";
+    } else if (width > 30 && width < 40) {
+      width += 0.2;
+      elem1.style.width = width + "%";
+    } else if (width > 41 && width < 42) {
+      width += 0.01;
+      elem1.style.width = width + "%";
+    } else if (width > 40 && width < 70) {
+      width += 0.7;
+      elem1.style.width = width + "%";
+    } else if (width > 70 && width < 90) {
+      width += 5;
+      elem1.style.width = width + "%";
+    } else if (width > 90 && width < 100) {
+      width += 1;
+      elem1.style.width = width + "%";
+    }
+    
+  }
+}
+
+// **************************
 // Copy Text to Clipboard
 // **************************
 var copyBtn = document.getElementById("copyBtn");
@@ -242,8 +293,10 @@ function copyText(){
   document.execCommand("copy",false);
   copyText.remove();
   
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Text Copied";
+  var tooltip = document.getElementsByClassName("tooltiptext")[0];
+  var myTooltip = document.getElementById("myTooltip");
+  tooltip.style.visibility = "visible";
+  myTooltip.innerHTML = "Copied!";
 }
 
 
@@ -254,14 +307,14 @@ function copyText(){
 
 // console.log(str.length);
 function countdownTimer(){
-  var seconds = 5;
+  var seconds = 23;
   // Update the count down every 1 second
   var myTimer = setInterval(function () {
     seconds--;
     document.getElementById("timer").innerHTML = seconds + " seconds";
 
     if (seconds == 0) {
-      seconds = 5;
+      seconds = 23;
       clearInterval(myTimer);
       // document.getElementById("decryptedModalBody").innerHTML = "Message Deleted";
       modal[0].style.display = "none";

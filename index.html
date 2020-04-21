@@ -66,9 +66,10 @@
                 <div class="modalBody" id="encryptedModalBody" type="textarea"></div>   
 
                 <button class="btn closeBtn" id="closeBtnBottom2">CLOSE</button>
-                <div class="tooltip">
-                <button class="btn" id="copyBtn"><span class="tooltiptext" id="myTooltip"></span>COPY</button>
-                </div>
+
+                <!-- <div class="tooltip"> -->
+                <button class="btn tooltip" id="copyBtn"><span class="tooltiptext" id="myTooltip"></span>COPY</button>
+                <!-- </div> -->
             </div>
         </div>    
         <!-- Encrtpting.... Modal Markup -->
@@ -89,7 +90,27 @@
                 <!-- <button  onclick="move()">click me</button> -->
                 <button class="btn closeBtn" id="cancelBtn">CANCEL</button>
             </div>
-        </div>    
+        </div> 
+        <!-- Decrtpting.... Modal Markup -->  
+        <div class="modal">
+            <div class="modalContent" id="decryptingModal">
+                <div class="flexContainerModal1">
+                    <h3 class="modalHead">Decrypting message...</h3>
+                    <div id="closeBtnTop4" class="closeBtn">
+                        <svg  id="close-X" class="icon visibility">
+                            <use xlink:href="/icons/close-X.svg#image1"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div id="loadBarBorder1">
+                    <div id="loadBarFill1"></div>
+                </div> 
+                <p>This will only take a few seconds</p>  
+                <!-- <button  onclick="move()">click me</button> -->
+                <button class="btn closeBtn" id="cancelBtn1">CANCEL</button>
+            </div>
+        </div> 
+        
     </div>
     <footer>
         <p>Developed my Zjak Theron & designed by Daleen Rabe</p>

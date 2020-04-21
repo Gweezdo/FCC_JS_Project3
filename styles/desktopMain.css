@@ -30,6 +30,7 @@ body{
     /* color: #333333; */
     display: block;
     margin: 0.4rem;
+    /* background-color: red; */
 }
 
 #mainHeading{
@@ -52,7 +53,7 @@ body{
     flex-direction: row;
     /* background-color: rgba(255, 94, 0, 0.794); */
     justify-content: center;
-    margin: 0;
+    margin-top: 5rem;
     padding: 0;
 }
 
@@ -79,6 +80,7 @@ body{
 }
 
 .flexItemTyp > textarea {
+    font-family: Arial, Helvetica, sans-serif;
     resize: none;
     width: 54.4rem;
     height: 232px;

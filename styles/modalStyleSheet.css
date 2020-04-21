@@ -13,6 +13,10 @@
     display: block;
 }
 
+#decryptingModal{
+    display: block;
+}
+
 /* Typical styling for all modals */
 body{
     background-color: rgba(13, 11, 12, 0.2);
@@ -66,7 +70,7 @@ body{
     line-height: 27px;
 }
 
-#closeBtnTop1, #closeBtnTop2, #closeBtnTop3{
+#closeBtnTop1, #closeBtnTop2, #closeBtnTop3, #closeBtnTop4{
     position: relative;
     /* display: block; */
     padding-top: 21.41px;
@@ -159,7 +163,7 @@ body{
 }
 
 /* Encrypting... modal specific style */
-#loadBarBorder{
+#loadBarBorder, #loadBarBorder1{
     position: relative;
     margin: 0 24px 0 24px;
     /* border: solid  */
@@ -169,7 +173,7 @@ body{
     background-color: rgba(217,215,216, 0.5);
 }
 
-#loadBarFill{
+#loadBarFill, #loadBarFill1{
     background-color:#05C7F2;
     height: 24px;
     width: 1%;
@@ -179,7 +183,7 @@ body{
     
 }
 
-#encryptingModal > p{
+#encryptingModal > p, #decryptingModal > p{
     /* padding: 0.8rem 24px; */
     margin: 0.8rem auto 2.2rem 2.4rem;
     font-size: 1.6rem;
@@ -187,23 +191,20 @@ body{
     /* background-color: red; */
 }
 
-#cancelBtn{
+#cancelBtn, #cancelBtn1{
     position: relative;
     margin: 0rem 32px 22px 0;
     left: 255px;
 }
 
 
+
+
 /**********************/
 /*Tooltip styling*/
 /**********************/
 
-.tooltip {
-  position: relative;
-  /* display: inline-block; */
-}
-
-.tooltip .tooltiptext {
+.tooltiptext {
   visibility: hidden;
   width: 140px;
   background-color: #555;
@@ -216,11 +217,11 @@ body{
   bottom: 150%;
   left: 50%;
   margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
+  opacity: 1;
+  /* transition: opacity 0.001s; */
 }
 
-.tooltip .tooltiptext::after {
+.tooltiptext::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -229,9 +230,4 @@ body{
   border-width: 5px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
 }
