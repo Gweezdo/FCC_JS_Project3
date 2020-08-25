@@ -152,6 +152,10 @@ function clickOutside(e){
   
 }
 
+// **************************
+// Open Modal Function 
+// **************************
+
 // Executes once 'Encrypt' button is clicked
 function encrypt() {
 
